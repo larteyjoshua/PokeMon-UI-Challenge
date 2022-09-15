@@ -4,7 +4,7 @@ import HeaderItem from "./HeaderItem";
 
 function Header() {
   return (
-    <header className="flex flex-col sm:flex-row m-5 justify-between items-center">
+    <header className=" flex flex-col sm:flex-row m-5 border=2 justify-between items-center  bg-[#00302E] ;">
      <div className="flex flex-grow justify-evenly max-w-2xl">
         <HeaderItem  title="Home" Icon={HomeIcon} />
         <HeaderItem  title="Search" Icon={MagnifyingGlassIcon} /> 
