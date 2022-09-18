@@ -1,6 +1,6 @@
 function Basics({ id, weight, height, types, abilities, species }) {
   const pokeTypes = [];
-  types.map((t) => pokeTypes.push(t.type.name));
+  types?.map((t) => pokeTypes.push(t.type.name));
 
   return (
     <div className="flex flex-col items-center py-5 px-4 h-full w-full overflow-hidden">
@@ -12,25 +12,33 @@ function Basics({ id, weight, height, types, abilities, species }) {
                 <div className="divTableCell w-20 text-[#00302E] text-right mr-6">
                   ID
                 </div>
-                <div className=" text-white bg-[#5bb0ca] divTableCell">#{id}</div>
+                <div className=" text-white bg-[#5bb0ca] divTableCell">
+                  #{id}
+                </div>
               </div>
               <div className="divTableRow flex mb-5">
                 <div className="divTableCell w-20 text-[#00302E] text-right mr-6">
                   Species
                 </div>
-                <div className="  bg-[#5bb0ca] text-white divTableCell">{species} </div>
+                <div className="  bg-[#5bb0ca] text-white divTableCell">
+                  {species}{" "}
+                </div>
               </div>
               <div className="divTableRow flex mb-5">
                 <div className="divTableCell w-20 text-[#00302E] text-right mr-6">
                   Height
                 </div>
-                <div className=" bg-[#5bb0ca] text-white divTableCell">{height / 10} m</div>
+                <div className=" bg-[#5bb0ca] text-white divTableCell">
+                  {height / 10} m
+                </div>
               </div>
               <div className="divTableRow flex mb-5">
                 <div className="divTableCell w-20 text-[#00302E] text-right mr-6">
                   Weight
                 </div>
-                <div className="  text-white bg-[#5bb0ca]  divTableCell">{weight / 10} kgs</div>
+                <div className="  text-white bg-[#5bb0ca]  divTableCell">
+                  {weight / 10} kgs
+                </div>
               </div>
               <div className="divTableRow flex mb-4">
                 <div className="divTableCell w-20 text-[#00302E] text-right mr-6">
@@ -61,12 +69,12 @@ function Basics({ id, weight, height, types, abilities, species }) {
                   Ability
                 </div>
                 <div className=" w-2/3  divTableCell flex justify-start flex-wrap">
-                  {abilities.map((x) => (
+                  {abilities?.map((x) => (
                     <span
                       className=" bg-[#5bb0ca] text-white rounded p-1  mb-2 mr-2"
-                      key={x.ability.name}
+                      key={x.ability?.name}
                     >
-                      {x.ability.name}
+                      {x.ability?.name}
                     </span>
                   ))}
                 </div>

@@ -55,8 +55,7 @@ export default function Home() {
 
   if (error) {
     return <Error error={error} />;
-  }
-
+  } 
   return (
     <div>
       <Head>
