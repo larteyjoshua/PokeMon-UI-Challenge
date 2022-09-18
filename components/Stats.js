@@ -7,7 +7,7 @@ function Stats({ stats }) {
       <div className=" w-20 text-[#00302E] ">Stats</div>
       <div className=" divTableCell w-100">
         <div className="flex flex-col">
-          {stats.map((statData) => (
+          {stats?.map((statData) => (
             <div
               className={`flex flex-grow capitalize mb-2 mr-4  text-white rounded px-1`}
               key={statData.stat.name}

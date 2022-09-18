@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
-import useFetchPokemonWithName from "./../../utils/fetchPokemonWithName";
 import Spinner from "../../components/Spinner";
 import Header from "../../components/Header";
 import Basics from "../../components/Basics";
@@ -9,27 +8,64 @@ import Move from "../../components/Move";
 import { BackwardIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Footer from "../../components/Footer";
+import Error from "../../components/Error";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 
 function PokemonDetail() {
   const { query } = useRouter();
-  const { result, error } = useFetchPokemonWithName(query?.name);
+  const [result, setResult] = useState({});
+  const [error, setError] = useState("");
+  const name = query?.name;
 
-  return (
-    <>
-      <Head>
-        <title>Pokémon - {result?.id}</title>
-        <link rel="icon" href="/assets/p-icon.jpeg" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
+  useEffect(() => {
+    fetchDetails();
+  }, [name]);
 
-      <Header />
-      <div className="flex flex-col bg-[#FBDDBB] mt-10 from-gray-200 items-center justify-evenly">
-        {result ? (
+  function fetchDetails() {
+    if (name) {
+      const API_URL = "https://pokeapi.co/api/v2/pokemon";
+      const url = `${API_URL}/${name}`;
+      axios
+        .get(url)
+        .then((response) => {
+          setResult(response?.data);
+        })
+        .catch((err) => {
+          setError(err?.message);
+        });
+    }
+  }
+
+  if (error) {
+    return (
+      <div className="h-screen t-50">
+        <Error error={error} />
+      </div>
+    );
+  } else if (!result) {
+    return (
+      <div className="h-screen">
+        <Spinner />
+      </div>
+    );
+  } else if (result && result?.id) {
+    return (
+      <>
+        <Head>
+          <title>Pokémon - {result?.id}</title>
+          <link rel="icon" href="/assets/p-icon.jpeg" />
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+        </Head>
+
+        <Header />
+        <div className="flex flex-col bg-[#FBDDBB] mt-10 from-gray-200 items-center justify-evenly">
           <div className="">
             <div className="bg-[#5bb0ca]  flex flex-col  justify-center items-center">
-              <h1
-                className='capitalize text-gray-100 rounded-md text-4xl'
-              >
+              <h1 className="capitalize text-gray-100 rounded-md text-4xl">
                 {query?.name}
               </h1>
             </div>
@@ -41,7 +77,7 @@ function PokemonDetail() {
                 abilities={result?.abilities}
                 weight={result?.weight}
                 height={result?.height}
-                species={result?.species.name}
+                species={result.species?.name}
               />
               <Move moves={result?.moves} />
               <Stats stats={result?.stats} />
@@ -54,15 +90,10 @@ function PokemonDetail() {
             </Link>
             <Footer />
           </div>
-        ) : (
-          <div className="h-screen">
-            <Spinner />
-            <Footer />
-          </div>
-        )}
-      </div>
-    </>
-  );
+        </div>
+      </>
+    );
+  }
 }
 
 export default PokemonDetail;
