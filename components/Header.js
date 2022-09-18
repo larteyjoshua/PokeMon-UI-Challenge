@@ -1,13 +1,16 @@
 import Image from "next/image";
-import{HomeIcon, MagnifyingGlassIcon} from '@heroicons/react/24/outline'
+import{HomeIcon} from '@heroicons/react/24/outline'
 import HeaderItem from "./HeaderItem";
+import { useRouter } from 'next/router'
+import Search from "./Search";
 
-function Header() {
+function Header({searchPokemon}) {
+    const router = useRouter()
   return (
-    <header className=" flex flex-col sm:flex-row m-5 border=2 justify-between items-center  bg-[#00302E] ;">
+    <header className="flex flex-col sm:flex-row m-5 p-2 justify-between items-center">
      <div className="flex flex-grow justify-evenly max-w-2xl">
-        <HeaderItem  title="Home" Icon={HomeIcon} />
-        <HeaderItem  title="Search" Icon={MagnifyingGlassIcon} /> 
+       <HeaderItem  title="Home" Icon={HomeIcon} onClick={() => router.push('/')} />
+        <Search searchPokemon ={searchPokemon} />
      </div>
      <div className="headerRight"> 
      <Image
