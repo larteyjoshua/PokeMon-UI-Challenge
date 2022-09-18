@@ -13,10 +13,10 @@ This is a Pokemon-Box app built using [Next.js](https://nextjs.org/) and [Tailwi
 Leave a 🌟 if you liked it. That would make my day 😊.
 
 ## Screenshots
-<img src="https://github.com/larteyjoshua/PokeMon-UI-Challenge/main/screenshots/main-page1" />
-<img src="https://github.com/larteyjoshua/PokeMon-UI-Challenge/main/screenshots/main-page3" />
-<img src="https://github.com/larteyjoshua/PokeMon-UI-Challenge/main/screenshots/detail-page1" />
-<img src="https://github.com/larteyjoshua/PokeMon-UI-Challenge/main/screenshots/details-page3" />
+<img src="https://github.com/larteyjoshua/PokeMon-UI-Challenge/blob/main/screenshots/main-page1.png" width='600'  />
+<img src="https://github.com/larteyjoshua/PokeMon-UI-Challenge/blob/main/screenshots/main-page2.png" width='600' />
+<img src="https://github.com/larteyjoshua/PokeMon-UI-Challenge/blob/main/screenshots/detail-page1.png" width='600' />
+<img src="https://github.com/larteyjoshua/PokeMon-UI-Challenge/blob/main/screenshots/detail-page2.png" width='600'  />
 ## Features
 
 1. Data of 100 species and different forms.
@@ -40,4 +40,3 @@ Leave a 🌟 if you liked it. That would make my day 😊.
 ## Copyright
 
 Pokémon and Pokemon-Box are registered trademarks of their respective owners. No copyright infringement intended. This is just a fun little side project made by a PokeFan.
-
