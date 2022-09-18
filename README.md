@@ -1,7 +1,6 @@
 
-![Website](https://img.shields.io/badge/Website-Up-green)
-![Next](https://img.shields.io/badge/NextJS-10.0.7-blue)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-2.0.3-blueviolet)
+![Next](https://img.shields.io/badge/NextJS-12.3.0-blue)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.1.8-blueviolet)
 
 
 
