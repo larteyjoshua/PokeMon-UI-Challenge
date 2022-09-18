@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 function Basics({ id, weight, height, types, abilities, species }) {
   const pokeTypes = [];
   types?.map((t) => pokeTypes.push(t.type.name));
@@ -37,7 +39,7 @@ function Basics({ id, weight, height, types, abilities, species }) {
                   Weight
                 </div>
                 <div className="  text-white bg-[#5bb0ca]  divTableCell">
-                  {weight / 10} kgs
+                  {weight / 10} kg
                 </div>
               </div>
               <div className="divTableRow flex mb-4">
@@ -84,8 +86,12 @@ function Basics({ id, weight, height, types, abilities, species }) {
         </div>
 
         <div className="w-full lg:w-4/12 h-full fade-in mt-8 lg:mt-0 px-4 lg:px-0">
-          <img
-            width={300}
+          <Image
+            height={100}
+            width={100}
+            layout="responsive"
+            priority={true}
+            quality={100}
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon//${id}.png`}
             alt="mainImage"
           />

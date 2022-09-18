@@ -37,15 +37,15 @@ function PokemonDetail() {
     }
   }
 
-  if (error) {
+  if (error && !result) {
     return (
-      <div className="h-screen t-50">
+      <div className="">
         <Error error={error} />
       </div>
     );
-  } else if (!result) {
+  } else if (!result && !error) {
     return (
-      <div className="h-screen">
+      <div className="">
         <Spinner />
       </div>
     );
