@@ -11,7 +11,7 @@ export default function Home() {
   const [pokemon, setPokemon] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [perPage, setPerPage] = useState(16);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const offset = currentPage * perPage;
   const currentPageData = pokemon.slice(offset, offset + perPage);
@@ -26,10 +26,12 @@ export default function Home() {
     const limit = 1000;
     const offSet = 0;
     const url = `${API_URL}?limit=${limit}&offset=${offSet}`;
-    axios.get(url).then((response) => {
-      setPokemon(response.data.results);
-    }).catch(err => setError(err.error)
-      );
+    axios
+      .get(url)
+      .then((response) => {
+        setPokemon(response.data.results);
+      })
+      .catch((err) => setError(err.error));
   }
   const copyPokemon = pokemon;
 
@@ -50,8 +52,8 @@ export default function Home() {
     setCurrentPage(selectedPage);
   }
 
-  if(error){
-    return (<Error error={error} />)
+  if (error) {
+    return <Error error={error} />;
   }
 
   return (
@@ -75,15 +77,15 @@ export default function Home() {
           "flex flex-col font-bold border rounded p-3 capitalize sm:p-0"
         }
         nextLinkClassName={
-          " font-bold text-[#5bb0ca] border  p-3 rounded capitalize sm: p-0"
+          " font-bold text-[#5bb0ca] border p-3 rounded capitalize sm:p-0"
         }
-        disabledClassName={" text-gray-700 sm: p-0"}
+        disabledClassName={"text-gray-700 sm:p-0"}
         activeClassName={
           "bg-[#5bb0ca] w-auto p-3 font-bold text-gray-700 sm:p-0"
         }
       />
 
-     <Footer />
+      <Footer />
     </div>
   );
 }
