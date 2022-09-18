@@ -4,6 +4,12 @@
 
 @layer base {
   body {
-    @apply bg-[#00302E] text-gray-300;
+    @apply bg-[#06202A] text-gray-300;
   }
+}
+
+@layer components {
+  .pagination {
+    @apply flex bg-black
+}
 }
