@@ -19,7 +19,7 @@ Leave a 🌟 if you liked it. That would make my day 😊.
 <img src="https://github.com/larteyjoshua/PokeMon-UI-Challenge/blob/main/screenshots/detail-page2.png" width='600'  />
 ## Features
 
-1. Data of 100 species and different forms.
+1. Data of 1000 species and different forms.
 2. Pokemon Moves.
 3. stats Data.
 4. Abilities.
