@@ -6,6 +6,7 @@ import ReactPaginate from "react-paginate";
 import axios from "axios";
 import Error from "../components/Error";
 import Footer from "../components/Footer";
+import Search from "../components/Search";
 
 export default function Home() {
   const [pokemon, setPokemon] = useState([]);
@@ -65,6 +66,7 @@ export default function Home() {
       </Head>
 
       <Header searchPokemon={searchPokemon} />
+      <Search searchPokemon={searchPokemon} />
       <Results result={currentPageData} />
 
       <ReactPaginate

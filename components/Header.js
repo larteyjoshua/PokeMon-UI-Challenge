@@ -7,23 +7,23 @@ import Search from "./Search";
 function Header({ searchPokemon }) {
   const router = useRouter();
   return (
-    <header className="flex flex-col sm:flex-row m-5 p-2 justify-between items-center">
+    <header className="flex flex-col sm:flex-row mt-5 p-2 justify-between items-center">
       <div className="flex flex-grow justify-evenly max-w-2xl">
         <HeaderItem
           title="Home"
           Icon={HomeIcon}
           onClick={() => router.push("/")}
         />
-        <Search searchPokemon={searchPokemon} />
+    
       </div>
-      <div className="headerRight">
+      <div className="flex flex-col justify-center items-center">
         <Image
-          className="objectContain"
+          className="object-contain"
           src="/assets/p-icon.jpeg"
           width={80}
           height={50}
         />
-        <p className="tracking-widest"> POKEMON</p>
+        <p className=" flex items-center tracking-widest">POKEMON-BOX</p>
       </div>
     </header>
   );
