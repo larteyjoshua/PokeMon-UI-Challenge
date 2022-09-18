@@ -1,5 +1,5 @@
 
-import CustomProgressBar from "./customProgressBar";
+import CustomProgressBar from "./CustomProgressBar";
 
 function Stats({ stats }) {
   return (
