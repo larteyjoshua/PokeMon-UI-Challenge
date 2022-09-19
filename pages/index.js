@@ -82,7 +82,7 @@ export default function Home() {
         }
         disabledClassName={"text-gray-700 sm:p-0"}
         activeClassName={
-          "bg-[#5bb0ca] w-auto p-3 font-bold text-gray-700 sm:p-0"
+          "bg-[#5bb0ca] w-auto p-3 font-bold text-white sm:p-0"
         }
       />
 
